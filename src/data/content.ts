@@ -3,7 +3,7 @@ export const content = {
     name: "Sathwik Gangapatnam",
     title: "Sathwik — Automation & QA",
     description: "n8n Automation Specialist and Manual QA Tester passionate about building reliable systems.",
-    email: "sathwik.gangapatnam@njsecure.org",
+    email: "sathwiks222@gmail.com",
     github: "https://github.com/Sathwik-SSG-8",
     linkedin: "https://www.linkedin.com/in/sai-sathwik-gangapatnam-485525250/",
   },
