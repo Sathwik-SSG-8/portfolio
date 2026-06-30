@@ -4,7 +4,7 @@ export const content = {
     title: "Sathwik — Automation & QA",
     description: "n8n Automation Specialist and Manual QA Tester passionate about building reliable systems.",
     email: "sathwik.gangapatnam@njsecure.org",
-    github: "https://github.com/Sathwik-njsecure",
+    github: "https://github.com/Sathwik-SSG-8",
     linkedin: "https://linkedin.com/in/sathwik-gangapatnam", // ← REPLACE WITH YOUR REAL LINKEDIN URL
   },
   hero: {
