@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { Mail, ExternalLink, GitBranch } from "lucide-react"
+import { Mail, ExternalLink } from "lucide-react"
 import { content } from "@/data/content"
 
 const links = [
@@ -15,12 +15,6 @@ const links = [
     href: content.meta.linkedin,
     icon: ExternalLink,
     value: "sai-sathwik-gangapatnam",
-  },
-  {
-    label: "GitHub",
-    href: content.meta.github,
-    icon: GitBranch,
-    value: "github.com/Sathwik-SSG-8",
   },
 ]
 
