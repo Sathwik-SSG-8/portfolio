@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sathwik's Portfolio
+
+Personal portfolio site for Sathwik Gangapatnam. Next.js 15+ (App Router),
+TypeScript, Tailwind CSS 3, Framer Motion, shadcn/ui. Deployed on Vercel.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## `CONTENT.md` — the site's content source
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**What it is:** a plain-English fill-in file at the repo root holding every
+piece of copy shown on the site — name, tagline, bio, rotating hero roles,
+about-section paragraphs, contact subheading, services, skills, projects, and
+the learning-journey timeline.
 
-## Learn More
+**Why it exists:** so the actual text of the site can be edited without
+touching TypeScript. `src/data/content.ts` is the typed data the components
+render from, but it's meant to be generated from `CONTENT.md`, not hand-edited.
+`CONTENT.md` is the one place to look to see (and change) everything the site
+says.
 
-To learn more about Next.js, take a look at the following resources:
+**How to use it:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Edit `CONTENT.md` — change existing values, or add/remove `###` blocks for
+   services, projects, and timeline entries (any number of each).
+2. Ask an AI assistant (Claude Code, Cursor, Kiro, etc.) to **"sync content
+   from CONTENT.md"**.
+3. It updates `src/data/content.ts` to match, runs `npm run build` to verify,
+   and shows you the diff before committing.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Full sync rules live in `AGENTS.md`.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Pushing to `origin/main` triggers an automatic Vercel deploy. Run
+`npm run build` locally first — don't push a broken build.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Live: https://sathwik-ssg-portfolio.vercel.app/
