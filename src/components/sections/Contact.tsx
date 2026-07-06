@@ -6,7 +6,7 @@ import { content } from "@/data/content"
 const links = [
   {
     label: "Email",
-    href: `mailto:${content.meta.email}`,
+    href: `https://mail.google.com/mail/?view=cm&fs=1&to=${content.meta.email}`,
     icon: Mail,
     value: content.meta.email,
   },
@@ -47,7 +47,7 @@ export default function Contact() {
             <motion.a
               key={label}
               href={href}
-              target={label !== "Email" ? "_blank" : undefined}
+              target="_blank"
               rel="noopener noreferrer"
               className="glass-card flex items-center gap-3 px-6 py-4 hover:border-[#06b6d4]/50 transition-all duration-200 group"
               initial={{ opacity: 0, y: 20 }}
