@@ -47,11 +47,33 @@ src/
     utils.ts              shadcn `cn()` helper
 ```
 
+## Updating site content (do this first, not content.ts directly)
+
+`CONTENT.md` (repo root) is the source of truth for all site copy — name, bio,
+roles, services, skills, projects, timeline, contact info. The person running
+this project edits `CONTENT.md` directly with real info.
+
+When asked to **"sync content from CONTENT.md"**:
+
+1. Read `CONTENT.md` and `src/data/content.ts` side by side.
+2. Update `content.ts` to match `CONTENT.md`'s values field-for-field.
+   - `services` and `timeline` entries need a `icon`/`current` field not present
+     in the markdown — pick a sensible Lucide icon name per service based on its
+     title/description; carry over `Current: yes/no` as the timeline's boolean.
+   - Project/service/timeline `###` blocks in the markdown are a variable-length
+     list — add or remove entries in `content.ts` to match the count in the
+     markdown exactly, don't just edit the first N.
+   - `content.meta.github` has no markdown field (it's unused since the footer
+     link was removed) — leave it as-is in `content.ts` unless told otherwise.
+3. Run `npm run build` to confirm it still compiles.
+4. Show the person what changed before committing.
+
 ## Editing conventions
 
 - **Content changes** (text, links, project descriptions, skills, timeline
-  entries) → edit `src/data/content.ts`, not the component files. Components
-  read from `content.*`, they shouldn't hardcode copy.
+  entries) → edit `CONTENT.md` and sync (see above), not `content.ts` or the
+  component files directly. Components read from `content.*`, they shouldn't
+  hardcode copy.
 - **Links/buttons in the footer or contact area** → `src/components/sections/Contact.tsx`.
   It renders a `links` array (icon + label + href); add/remove entries there directly —
   they don't all have to come from `content.meta`.
