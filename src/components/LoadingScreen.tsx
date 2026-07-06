@@ -25,7 +25,7 @@ export default function LoadingScreen({ onComplete }: Props) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Welcome
+          Welcome to
         </motion.p>
 
         <motion.h1
@@ -34,7 +34,7 @@ export default function LoadingScreen({ onComplete }: Props) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-          Sathwik<span className="text-[#06b6d4]">.</span>
+          Sathwik&apos;s Portfolio<span className="text-[#06b6d4]">.</span>
         </motion.h1>
 
         <motion.div
